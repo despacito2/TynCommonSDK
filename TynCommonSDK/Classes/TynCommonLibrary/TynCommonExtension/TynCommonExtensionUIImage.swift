@@ -171,16 +171,16 @@ public extension UIImage {
     /// 压缩图片，返回data
     /// - Parameter max: 最大的值 1K = 1024, 1M = 1024*1024
     /// - Returns: 压缩后的data
-    func compression(_ max: Int, step: CGFloat = 0.01, successBack:((_ goodImageData:Data) -> Void)? = nil) {
-        var data = self.jpegData(compressionQuality: 0.7)
-        
-        var quality: CGFloat = 0.7
-        while data!.count > max && quality > 0.08 {
-            quality -= step
-            data = self.jpegData(compressionQuality: quality)!
-        }
-        successBack?(data!)
-    }
+//    func compression(_ max: Int, step: CGFloat = 0.01, successBack:((_ goodImageData:Data) -> Void)? = nil) {
+//        var data = self.jpegData(compressionQuality: 0.7)
+//
+//        var quality: CGFloat = 0.7
+//        while data!.count > max && quality > 0.08 {
+//            quality -= step
+//            data = self.jpegData(compressionQuality: quality)!
+//        }
+//        successBack?(data!)
+//    }
     
     ///  合并图片
     /// - Parameters:

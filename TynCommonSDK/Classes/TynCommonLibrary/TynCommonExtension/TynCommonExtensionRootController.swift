@@ -36,17 +36,18 @@ extension UIViewController {
     /// - Returns: 当前屏幕显示的VC
     class func getCurrentViewController() -> UIViewController?{
         // 获取当先显示的window
-        var currentWindow = UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow()
-        if currentWindow.windowLevel != UIWindow.Level.normal {
-            let windowArr = UIApplication.shared.windows
-            for window in windowArr {
-                if window.windowLevel == UIWindow.Level.normal {
-                    currentWindow = window
-                    break
-                }
-            }
-        }
-        return UIViewController.getNextXController(nextController: currentWindow.rootViewController)
+//        var currentWindow = UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow()
+//        if currentWindow.windowLevel != UIWindow.Level.normal {
+//            let windowArr = UIApplication.shared.windows
+//            for window in windowArr {
+//                if window.windowLevel == UIWindow.Level.normal {
+//                    currentWindow = window
+//                    break
+//                }
+//            }
+//        }
+//        return UIViewController.getNextXController(nextController: currentWindow.rootViewController)
+        return UIViewController()
     }
     
     private class func  getNextXController(nextController: UIViewController?) -> UIViewController? {

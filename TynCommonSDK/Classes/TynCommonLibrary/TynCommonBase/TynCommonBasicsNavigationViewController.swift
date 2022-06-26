@@ -18,7 +18,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if children.count > 0 {
+        if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
             
             //凸起按钮
@@ -40,7 +40,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     
     @discardableResult
     override func popViewController(animated: Bool) -> UIViewController? {
-//        if children.count == 2 {
+//        if childViewControllers.count == 2 {
             //凸起按钮
 //            NotificationCenter.default.post(name: Notification.Name(rawValue: "addBtn"), object: nil)
 //        }

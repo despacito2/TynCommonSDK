@@ -80,7 +80,7 @@ class TYN_BasicTabBarViewController: UITabBarController {
 
 extension TYN_BasicTabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        var isJumpPage = true
+        let isJumpPage = true
         
         //凸起按钮
 //        if viewController.tabBarItem.tag == 2 {
@@ -90,11 +90,11 @@ extension TYN_BasicTabBarViewController: UITabBarControllerDelegate {
         
         
         if viewController.tabBarItem.tag == 3 || viewController.tabBarItem.tag == 2 {
-            TYN_LoginViewController.isUserLogin {
-
-            } faileCallBack: {
-                isJumpPage = false
-            }
+//            TYN_LoginViewController.isUserLogin {
+//
+//            } faileCallBack: {
+//                isJumpPage = false
+//            }
         }
         return isJumpPage
     }

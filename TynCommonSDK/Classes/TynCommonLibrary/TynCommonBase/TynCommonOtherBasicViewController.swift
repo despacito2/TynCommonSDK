@@ -19,11 +19,11 @@ class TYN_OtherBasicViewController: UIViewController,TYN_DefaultStyleViewControl
         print("\(Self.self)")
     }
 
-    func topImageView(toView:UIView) {
-        bgImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: toView.bounds.size.width, height: 155 - navigationHandStatusH()))
-        bgImageView.image = UIImage(named: "1")
-        toView.addSubview(bgImageView)
-    view.sendSubviewToBack(bgImageView)
-    }
+//    func topImageView(toView:UIView) {
+//        bgImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: toView.bounds.size.width, height: 155 - navigationHandStatusH()))
+//        bgImageView.image = UIImage(named: "1")
+//        toView.addSubview(bgImageView)
+//        view.sendSubview(toBack:)
+//    }
     
 }
