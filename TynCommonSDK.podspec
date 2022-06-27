@@ -1,50 +1,3 @@
-# #
-# # Be sure to run `pod lib lint TynCommonSDK.podspec' to ensure this is a
-# # valid spec before submitting.
-# #
-# # Any lines starting with a # are optional, but their use is encouraged
-# # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-# #
-
-# Pod::Spec.new do |s|
-#   s.name             = 'TynCommonSDK'
-#   s.version          = '0.1.0'
-#   s.summary          = 'A short description of TynCommonSDK.'
-
-# # This description is used to generate tags and improve search results.
-# #   * Think: What does it do? Why did you write it? What is the focus?
-# #   * Try to keep it short, snappy and to the point.
-# #   * Write the description between the DESC delimiters below.
-# #   * Finally, don't worry about the indent, CocoaPods strips it!
-
-#   s.description      = <<-DESC
-# TODO: Add long description of the pod here.
-#                        DESC
-
-#   s.homepage         = 'https://github.com/despacito2/TynCommonSDK'
-#   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-#   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-#   s.author           = { 'despacito2' => '1756110665@qq.com' }
-#   s.source           = { :git => 'https://github.com/despacito2/TynCommonSDK.git', :tag => s.version.to_s }
-#   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-#   s.ios.deployment_target = '10.0'
-
-#   s.source_files = 'TynCommonSDK/Classes/**/*'
-  
-#   # s.resource_bundles = {
-#   #   'TynCommonSDK' => ['TynCommonSDK/Assets/*.png']
-#   # }
-
-#   # s.public_header_files = 'Pod/Classes/**/*.h'
-#   # s.frameworks = 'UIKit', 'MapKit'
-#   # s.dependency 'AFNetworking', '~> 2.3'
-# end
-
-
-
-
-
 Pod::Spec.new do |s|
 s.name         = 'TynCommonSDK' #项目名称
 s.version      = "1.1.0" #版本号 要和接下来上传git的tag版本号一致
@@ -58,6 +11,7 @@ s.author       = { 'despacito2' => '1756110665@qq.com' } #作者信息：账户�
 s.source       = { :git => 'https://github.com/despacito2/TynCommonSDK.git', :tag => s.version.to_s } # 这里输入邮箱如果你在开元中国申请的 git 账号,那么把你在开元中国创建的项目的 https 网址输入到这里,
 s.platform     = :ios
 s.platform     = :ios, "13.0" #iOS 支持的最低级别,这里最低9.0
+s.swift_version = '5.0'
 s.source_files = 'TynCommonSDK/Classes/**/*'
 s.dependency "BRPickerView"
 s.dependency "WCDBSwift"
