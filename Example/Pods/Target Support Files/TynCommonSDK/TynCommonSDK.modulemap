@@ -1,0 +1,6 @@
+framework module TynCommonSDK {
+  umbrella header "TynCommonSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

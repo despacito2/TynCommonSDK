@@ -18,7 +18,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if childViewControllers.count > 0 {
+        if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
             
             //凸起按钮

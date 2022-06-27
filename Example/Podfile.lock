@@ -1,0 +1,60 @@
+PODS:
+  - BRPickerView (2.7.8):
+    - BRPickerView/AddressPickerView (= 2.7.8)
+    - BRPickerView/Base (= 2.7.8)
+    - BRPickerView/DatePickerView (= 2.7.8)
+    - BRPickerView/StringPickerView (= 2.7.8)
+  - BRPickerView/AddressPickerView (2.7.8):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.7.8)
+  - BRPickerView/DatePickerView (2.7.8):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.7.8):
+    - BRPickerView/Base
+  - IQKeyboardManagerSwift (6.5.10)
+  - JXPagingView/Paging (2.1.2)
+  - JXSegmentedView (1.3.0)
+  - MBProgressHUD (1.2.0)
+  - OptimizedSQLCipher (1.2.2)
+  - SQLiteRepair (1.2.2):
+    - OptimizedSQLCipher
+  - TynCommonSDK (1.1.0):
+    - BRPickerView
+    - IQKeyboardManagerSwift
+    - JXPagingView/Paging
+    - JXSegmentedView
+    - MBProgressHUD
+    - WCDBSwift
+  - WCDBSwift (1.0.2):
+    - OptimizedSQLCipher
+    - SQLiteRepair
+
+DEPENDENCIES:
+  - TynCommonSDK
+
+SPEC REPOS:
+  trunk:
+    - BRPickerView
+    - IQKeyboardManagerSwift
+    - JXPagingView
+    - JXSegmentedView
+    - MBProgressHUD
+    - OptimizedSQLCipher
+    - SQLiteRepair
+    - TynCommonSDK
+    - WCDBSwift
+
+SPEC CHECKSUMS:
+  BRPickerView: cdc9ef25f97914df653d1cda0fd8eeb27a5620f5
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
+  JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  OptimizedSQLCipher: 92a1bf5cc94139e1da49de9c883ff9891bcd2a37
+  SQLiteRepair: 65ac4472667ac8cdeb93c3765f2fcae4dd259204
+  TynCommonSDK: e59ca2ee3ce16ec3fecb8644891662d417c933b0
+  WCDBSwift: 6687dc2d4bebce2b237017ca367730f5f8409e67
+
+PODFILE CHECKSUM: b1e29bb8508c03eddb1cac2d936a177027ae1837
+
+COCOAPODS: 1.11.3

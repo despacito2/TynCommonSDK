@@ -1,16 +1,11 @@
-use_frameworks!
-
-platform :ios, '10.0'
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
 
 target 'TynCommonSDK_Example' do
-  pod 'TynCommonSDK', :path => '../'
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
 
-  target 'TynCommonSDK_Tests' do
-    inherit! :search_paths
+  # Pods for TynCommonSDK_Example
+  pod 'TynCommonSDK'
 
-    pod 'Quick', '~> 2.2.0'
-    pod 'Nimble', '~> 10.0.0'
-    pod 'FBSnapshotTestCase' , '~> 2.1.4'
-    pod 'Nimble-Snapshots' , '~> 9.4.0'
-  end
 end

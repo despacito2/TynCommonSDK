@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CABBB7FE97E2C0580DBC964 /* Pods_TynCommonSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B94B13CBD231DD282387F1 /* Pods_TynCommonSDK_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		050C2B3F6A2B7224B7F6895C /* TynCommonSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TynCommonSDK.podspec; path = ../TynCommonSDK.podspec; sourceTree = "<group>"; };
 		0AAB6673694A017A9B492229 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2F933B6A9B62DB7670793F84 /* Pods-TynCommonSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TynCommonSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-TynCommonSDK_Example/Pods-TynCommonSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TynCommonSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TynCommonSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,9 @@
 		607FACE51AFB9204008FA782 /* TynCommonSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TynCommonSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		B7B94B13CBD231DD282387F1 /* Pods_TynCommonSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TynCommonSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF7D6665580752D6F9DD72A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E40AB8C13A7FA1FB9C14E202 /* Pods-TynCommonSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TynCommonSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-TynCommonSDK_Example/Pods-TynCommonSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CABBB7FE97E2C0580DBC964 /* Pods_TynCommonSDK_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DD9FCC45E6BC23B69BD5108 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E40AB8C13A7FA1FB9C14E202 /* Pods-TynCommonSDK_Example.debug.xcconfig */,
+				2F933B6A9B62DB7670793F84 /* Pods-TynCommonSDK_Example.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		45F7C20188CC3367B97B41E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B94B13CBD231DD282387F1 /* Pods_TynCommonSDK_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +89,8 @@
 				607FACD21AFB9204008FA782 /* Example for TynCommonSDK */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
+				1DD9FCC45E6BC23B69BD5108 /* Pods */,
+				45F7C20188CC3367B97B41E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TynCommonSDK_Example" */;
 			buildPhases = (
+				C0BC875531F3D01CB5AD0289 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				974557A84571BF077124A29D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PROJECT" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "TynCommonSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -224,6 +251,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		974557A84571BF077124A29D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TynCommonSDK_Example/Pods-TynCommonSDK_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BRPickerView/BRPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JXPagingView/JXPagingView.framework",
+				"${BUILT_PRODUCTS_DIR}/JXSegmentedView/JXSegmentedView.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/OptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLiteRepair/sqliterk.framework",
+				"${BUILT_PRODUCTS_DIR}/TynCommonSDK/TynCommonSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBSwift/WCDBSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPagingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXSegmentedView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TynCommonSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDBSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TynCommonSDK_Example/Pods-TynCommonSDK_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0BC875531F3D01CB5AD0289 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TynCommonSDK_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -374,6 +460,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E40AB8C13A7FA1FB9C14E202 /* Pods-TynCommonSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TynCommonSDK/Info.plist;
@@ -388,6 +475,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F933B6A9B62DB7670793F84 /* Pods-TynCommonSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TynCommonSDK/Info.plist;
@@ -441,7 +529,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PROJECT" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "TynCommonSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,

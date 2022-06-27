@@ -7,13 +7,13 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     class func color(with name: String) -> UIColor? {
         UIColor(named: "Color\(name)")
     }
 }
 
-extension UIColor {
+public extension UIColor {
     
     /// 颜色初始化 默认 白色
     /// - Parameter hex: 类似 #F9F9F9F0
@@ -79,7 +79,7 @@ extension UIColor {
     
 }
 
-extension UIColor {
+public extension UIColor {
     convenience init(red: UInt, green: UInt, blue: UInt, transparency: CGFloat = 1) {
         guard red >= 0, red <= 255 else {
             self.init(hex: 0xFFFFFF)
