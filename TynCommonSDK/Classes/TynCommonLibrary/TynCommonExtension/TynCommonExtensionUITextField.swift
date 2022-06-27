@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextField {
+public extension UITextField {
     ///判断内容是否为空，默认不为空
     func isNotEmpty() -> Bool {
         var isNotEmpty = true
@@ -24,7 +24,7 @@ extension UITextField {
     }
 }
 
-extension UITextView {
+public extension UITextView {
     ///判断内容是否为空，默认不为空
     func isNotEmpty() -> Bool {
         var isNotEmpty = true

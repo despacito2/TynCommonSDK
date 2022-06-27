@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIStoryboard {
+public extension UIStoryboard {
     
     /// Storyboard初始化VC
     /// - Parameter name: 类名
@@ -17,7 +17,7 @@ extension UIStoryboard {
     }
 }
 
-extension UIStoryboard {
+public extension UIStoryboard {
     
     class func createMainBundleSB(with name: String) -> UIStoryboard {
         UIStoryboard(name: name, bundle: Bundle.main)
@@ -25,7 +25,7 @@ extension UIStoryboard {
     
 }
 
-extension UIStoryboard {
+public extension UIStoryboard {
     
     /// 其他Storyboard初始化VC
     /// - Parameters:

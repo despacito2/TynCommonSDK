@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UserDefaults {
+public extension UserDefaults {
     //应用第一次启动
     static func isFirstLaunch() -> Bool {
         let hasBeenLaunched = "hasBeenLaunched"

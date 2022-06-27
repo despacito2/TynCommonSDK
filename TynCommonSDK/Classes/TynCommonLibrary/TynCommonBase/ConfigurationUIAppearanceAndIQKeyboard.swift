@@ -9,7 +9,11 @@ import Foundation
 import IQKeyboardManagerSwift
 import TynCommonSDK
 
-extension TYN {
+public enum TYN {
+    
+}
+
+public extension TYN {
     ///在AppDelegate中didFinishLaunchingWithOptions需要调用的方法
     /// - Parameters:
     ///   - titleColor: 标题颜色

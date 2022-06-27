@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /// Xib 加载 UIView
     class func loadFromXib(bundle: Bundle? = nil) -> Self {
         let named = String(describing: Self.self)

@@ -8,11 +8,11 @@
 import MBProgressHUD
 import UIKit
 
-enum TYN_HUD {
+public enum TYN_HUD {
     
 }
 
-extension TYN_HUD {
+public extension TYN_HUD {
     ///只展示文字,2秒消失
     static func showMsg(toView:UIView? = UIViewController.getCurrentViewController()?.view, textMsg:String, completion:(() -> Void)? = nil) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     /**
      *  重设图片大小
      */

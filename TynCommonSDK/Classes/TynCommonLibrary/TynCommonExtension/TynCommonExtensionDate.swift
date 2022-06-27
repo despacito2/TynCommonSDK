@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
 //    yyyy-MM-dd_HH:mm:ss
     
     //日期转英文
@@ -75,7 +75,7 @@ extension Date {
     
 }
 
-extension Date {
+public extension Date {
     //该时间所在周的第一天日期（2017年12月17日 00:00:00）
     var startOfWeek: Date {
         let calendar = NSCalendar.current

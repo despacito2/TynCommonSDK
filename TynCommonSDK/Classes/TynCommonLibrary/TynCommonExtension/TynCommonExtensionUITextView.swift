@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UITextView {
+public extension UITextView {
     ///多段文字并设置间距
     func manyText(textArr:[String]) {
         var str:String!
@@ -30,7 +30,7 @@ extension UITextView {
     }
 }
 
-extension UILabel {
+public extension UILabel {
     ///多段文字并设置间距
     func manyText(text:String, lineSpacing:CGFloat, textFont:UIFont, textColor:UIColor) {
         //通过富文本来设置行间距
