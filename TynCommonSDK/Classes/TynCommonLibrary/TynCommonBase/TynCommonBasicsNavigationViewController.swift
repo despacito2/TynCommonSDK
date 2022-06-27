@@ -40,10 +40,6 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     
     @discardableResult
     override func popViewController(animated: Bool) -> UIViewController? {
-//        if childViewControllers.count == 2 {
-            //凸起按钮
-//            NotificationCenter.default.post(name: Notification.Name(rawValue: "addBtn"), object: nil)
-//        }
         let controller = super.popViewController(animated: animated)
         return controller
     }
