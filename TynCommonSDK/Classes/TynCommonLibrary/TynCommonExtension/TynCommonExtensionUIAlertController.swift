@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     ///举报内容
     static func reportAlert() {
         let actionSheet = UIAlertController.init(title: "举报类型", message: nil, preferredStyle: .actionSheet)

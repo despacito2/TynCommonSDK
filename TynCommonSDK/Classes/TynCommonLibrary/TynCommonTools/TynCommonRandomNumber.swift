@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum TYN_RandomNumber {
+public enum TYN_RandomNumber {
 
 }
 
-extension TYN_RandomNumber {
+public extension TYN_RandomNumber {
     ///随机生成订单号
     static func orderNumbers() -> String {
         let num1 = Int(arc4random_uniform(8999) + 1000)

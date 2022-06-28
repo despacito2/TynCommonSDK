@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-enum TYN_SystemFunction {
+public enum TYN_SystemFunction {
 
 }
 
-extension TYN_SystemFunction {
+public extension TYN_SystemFunction {
     ///随机拨打电话
     static func call(phone:String? = nil, isRandom:Bool) {
         var phoneText = phone

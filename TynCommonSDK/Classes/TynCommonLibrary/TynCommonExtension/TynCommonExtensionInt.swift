@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     ///整型转00:00:00，最大是小时
     func multipleZeroH(showChinese:Bool? = false) -> String {
         var timeStrH:String

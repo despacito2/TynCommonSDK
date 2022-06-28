@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 //MARK: -定义button相对label的位置
-enum RGButtonImagePosition {
+public enum RGButtonImagePosition {
     case top          //图片在上，文字在下，垂直居中对齐
     case bottom       //图片在下，文字在上，垂直居中对齐
     case left         //图片在左，文字在右，水平居中对齐
