@@ -9,25 +9,23 @@ import UIKit
 
 
 
-class TYN_BasicTabBarViewController: UITabBarController {
+open class TYN_BasicTabBarViewController: UITabBarController {
     
     var humpBtn:UIButton!
     var bgView:UIView!
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         ///tabBar按钮选中和未选中颜色
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hex: "#333333"), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12.0)], for: .selected)
-        self.tabBar.unselectedItemTintColor = UIColor(hex: "#AAAAAA")
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hex: "#A695FF"), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12.0)], for: .selected)
+        self.tabBar.unselectedItemTintColor = UIColor(hex: "#DDDDDD")
         
         tabBar.isTranslucent = false
         
         ///tabBar背景颜色
-        tabBar.backgroundColor = UIColor(hex: "#FFFFFF")
+        tabBar.backgroundColor = UIColor(hex: "#FAFAFA")
         
-        delegate = self
-
     }
     
     ///凸起按钮
@@ -72,30 +70,8 @@ class TYN_BasicTabBarViewController: UITabBarController {
 //        present(vc, animated: true)
     }
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
     }
     
-}
-
-extension TYN_BasicTabBarViewController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        let isJumpPage = true
-        
-        //凸起按钮
-//        if viewController.tabBarItem.tag == 2 {
-//            isJumpPage = false
-//            NotificationCenter.default.post(name: Notification.Name(rawValue: "clickBtn"), object: nil)
-//        }
-        
-        
-        if viewController.tabBarItem.tag == 3 || viewController.tabBarItem.tag == 2 {
-//            TYN_LoginViewController.isUserLogin {
-//
-//            } faileCallBack: {
-//                isJumpPage = false
-//            }
-        }
-        return isJumpPage
-    }
 }

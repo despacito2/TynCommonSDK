@@ -8,11 +8,11 @@
 import Foundation
 import BRPickerView
 
-public enum TYN_BRPickerView {
+enum TYN_BRPickerView {
 
 }
 
-public extension TYN_BRPickerView {
+extension TYN_BRPickerView {
     ///年月日
     static func YMD(title:String, type:BRDatePickerMode? = .YMD, isFromNow:Bool? = true, fromDate:Date? = Date(), isMaxNow:Bool? = false, selecteCallBack:@escaping BRDateResultBlock) {
         let datePickerView = BRDatePickerView()

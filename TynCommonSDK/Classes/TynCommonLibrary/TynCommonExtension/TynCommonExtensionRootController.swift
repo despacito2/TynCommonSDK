@@ -35,7 +35,7 @@ public extension UIViewController {
     ///
     /// - Returns: 当前屏幕显示的VC
     class func getCurrentViewController() -> UIViewController?{
-//         获取当先显示的window
+        // 获取当先显示的window
         var currentWindow = UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIWindow()
         if currentWindow.windowLevel != UIWindow.Level.normal {
             let windowArr = UIApplication.shared.windows

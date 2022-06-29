@@ -22,27 +22,27 @@ extension UIColor {
     }
 }
 
-class QRCreateModel {
+public class QRCreateModel: NSObject {
 
     /// 文本
-    var text: String!
+    public var text: String!
 
     /// 二维码中间的logo
-    var logo: String?
+    public var logo: String?
 
     /// 二维码缩放倍数{27*scale,27*scale}
-    var scale: Float = 10
+    public var scale: Float = 10
 
     /// 二维码背景颜色
-    var backgroundColor: UIColor = UIColor.white
+    public var backgroundColor: UIColor = UIColor.white
 
     /// 二维码颜色
-    var contentColor: UIColor = UIColor.black
+    public var contentColor: UIColor = UIColor.black
 }
 
-class QRCreator {
+public class QRCreator {
 
-    static let shared = QRCreator()
+    public static let shared = QRCreator()
 
     private let qrFilter: CIFilter
     private let colorFilter: CIFilter
@@ -114,7 +114,7 @@ class QRCreator {
         return outPutImage
     }
 
-    func create(_ model: QRCreateModel) -> UIImage? {
+    public func create(_ model: QRCreateModel) -> UIImage? {
 
         guard var outputImage = createBase(text: model.text, scale: model.scale) else {
 

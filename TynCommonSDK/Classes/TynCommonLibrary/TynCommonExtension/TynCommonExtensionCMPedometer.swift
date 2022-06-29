@@ -8,7 +8,7 @@
 import Foundation
 import CoreMotion
 
-public extension CMPedometer {
+extension CMPedometer {
     
     ///判断是否支持记步
     static func estimateSupport(supportCallBack:(() -> Void)){

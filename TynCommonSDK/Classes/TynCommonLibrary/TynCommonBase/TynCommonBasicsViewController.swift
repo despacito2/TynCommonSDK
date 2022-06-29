@@ -25,9 +25,9 @@ extension TYN_DefaultStyleViewController {
     }
 }
 
-class TYN_BasicsViewController: UIViewController, TYN_DefaultStyleViewController {
+open class TYN_BasicsViewController: UIViewController, TYN_DefaultStyleViewController {
     var bgImageView:UIImageView!
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         setDefauTYN_tyle()
@@ -70,7 +70,7 @@ extension TYN_DefaultStyleViewController {
 }
 
 extension TYN_BasicsViewController:UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if self.navigationController?.viewControllers.count == 0{
             return false;
         }

@@ -61,7 +61,7 @@ public class GradientButton: UIButton {
     /// - Parameters:
     ///   - style: 图片位置
     ///   - spacing: 按钮图片与文字之间的间隔
-    func imagePosition(style: RGButtonImagePosition, spacing: CGFloat) {
+    public func imagePosition(style: RGButtonImagePosition, spacing: CGFloat) {
         //得到imageView和titleLabel的宽高
         let imageWidth = self.imageView?.frame.size.width
         let imageHeight = self.imageView?.frame.size.height

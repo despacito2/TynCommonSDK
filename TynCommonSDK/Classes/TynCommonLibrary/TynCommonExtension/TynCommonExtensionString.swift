@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public extension String {
+extension String {
     subscript(_ indexs: ClosedRange<Int>) -> String {
         let beginIndex = index(startIndex, offsetBy: indexs.lowerBound)
         let endIndex = index(startIndex, offsetBy: indexs.upperBound)
@@ -60,7 +60,7 @@ public extension String {
     
 }
 
-public extension String {
+extension String {
     
     ///根据宽度跟字体，计算文字的高度
     
