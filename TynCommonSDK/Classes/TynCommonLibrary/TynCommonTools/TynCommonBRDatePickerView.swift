@@ -8,11 +8,11 @@
 import Foundation
 import BRPickerView
 
-enum TYN_BRPickerView {
+public enum TYN_BRPickerView {
 
 }
 
-extension TYN_BRPickerView {
+public extension TYN_BRPickerView {
     ///年月日
     static func YMD(title:String, type:BRDatePickerMode? = .YMD, isFromNow:Bool? = true, fromDate:Date? = Date(), isMaxNow:Bool? = false, selecteCallBack:@escaping BRDateResultBlock) {
         let datePickerView = BRDatePickerView()
@@ -43,5 +43,13 @@ extension TYN_BRPickerView {
         datePickerView.selectDate = NSDate.now
         datePickerView.resultBlock = selecteCallBack
         datePickerView.show()
+    }
+    
+    static func address(title:String, type:BRAddressPickerMode? = .city, selecteCallBack:@escaping BRAddressResultBlock) {
+        let addressPickerView = BRAddressPickerView()
+        addressPickerView.pickerMode = type!
+        addressPickerView.title = title
+        addressPickerView.resultBlock = selecteCallBack
+        addressPickerView.show()
     }
 }

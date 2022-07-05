@@ -98,4 +98,34 @@ public extension UIAlertController {
 
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
+    
+    ///足球位置
+    static func footballTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
+        let actionSheet = UIAlertController.init(title: "足球位置", message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: "守门员", style: .default) { _ in
+            selectBlock("守门员")
+        }
+        let action2 = UIAlertAction.init(title: "后卫", style: .default) { _ in
+            selectBlock("后卫")
+        }
+        let action3 = UIAlertAction.init(title: "中场", style: .default) { _ in
+            selectBlock("中场")
+        }
+        let action4 = UIAlertAction.init(title: "前锋", style: .default) { _ in
+            selectBlock("前锋")
+        }
+        let action5 = UIAlertAction.init(title: "补位", style: .default) { _ in
+            selectBlock("补位")
+        }
+        let action6 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+
+        }
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(action3)
+        actionSheet.addAction(action4)
+        actionSheet.addAction(action5)
+        actionSheet.addAction(action6)
+        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
+    }
 }
