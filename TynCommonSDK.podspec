@@ -20,6 +20,7 @@ s.dependency "MBProgressHUD"
 s.dependency "JXPagingView/Paging"
 s.dependency "JXSegmentedView" #这里输入需要用到的依赖库,如果没有特别的需要可以不用输入直接注释掉
 s.dependency "Firebase/AnalyticsWithoutAdIdSupport"
+s.dependency "CYLTabBarController"
 s.frameworks   = 'UIKit', 'Foundation' #静态库文件的依赖，意思是执行到Classes文件夹下检索.framework类型的文件，我们放入的是动态库文件需要写入进行标注
 s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }  # 如果项目已经设置 pod_target_xcconfig，添加到已有值的后面。此处解决了模拟器和真机包合并问题
 end

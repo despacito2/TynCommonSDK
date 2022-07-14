@@ -18,8 +18,8 @@ open class TYN_BasicTabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         ///tabBar按钮选中和未选中颜色
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hex: "#3D3D3D"), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12.0)], for: .selected)
-        self.tabBar.unselectedItemTintColor = UIColor(hex: "#999999")
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(hex: "#A695FF"), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12.0)], for: .selected)
+        self.tabBar.unselectedItemTintColor = UIColor(hex: "#DDDDDD")
         
         tabBar.isTranslucent = false
         

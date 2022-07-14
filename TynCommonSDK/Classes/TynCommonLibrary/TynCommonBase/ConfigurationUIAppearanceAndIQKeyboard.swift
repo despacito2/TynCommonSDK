@@ -7,6 +7,7 @@
 
 import Foundation
 import IQKeyboardManagerSwift
+import TynCommonSDK
 
 public enum TYN {
     

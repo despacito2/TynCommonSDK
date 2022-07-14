@@ -44,12 +44,4 @@ public extension TYN_BRPickerView {
         datePickerView.resultBlock = selecteCallBack
         datePickerView.show()
     }
-    
-    static func address(title:String, type:BRAddressPickerMode? = .city, selecteCallBack:@escaping BRAddressResultBlock) {
-        let addressPickerView = BRAddressPickerView()
-        addressPickerView.pickerMode = type!
-        addressPickerView.title = title
-        addressPickerView.resultBlock = selecteCallBack
-        addressPickerView.show()
-    }
 }

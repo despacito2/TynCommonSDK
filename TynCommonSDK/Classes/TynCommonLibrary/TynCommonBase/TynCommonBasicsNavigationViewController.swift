@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TYN_BasicsNavigationViewController: UINavigationController {
+open class TYN_BasicsNavigationViewController: UINavigationController {
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         ///返回按钮颜色
@@ -17,7 +17,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
 
     }
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
             
@@ -28,7 +28,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     }
     
     @discardableResult
-    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    open override func popToRootViewController(animated: Bool) -> [UIViewController]? {
         if self.viewControllers.count > 1 {
             topViewController?.hidesBottomBarWhenPushed = false
             
@@ -39,7 +39,7 @@ class TYN_BasicsNavigationViewController: UINavigationController {
     }
     
     @discardableResult
-    override func popViewController(animated: Bool) -> UIViewController? {
+    open override func popViewController(animated: Bool) -> UIViewController? {
         let controller = super.popViewController(animated: animated)
         return controller
     }
