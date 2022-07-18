@@ -60,7 +60,7 @@ extension String {
     
 }
 
-extension String {
+public extension String {
     
     ///根据宽度跟字体，计算文字的高度
     
