@@ -96,4 +96,22 @@ public extension String {
         
     }
     
+    //根据正则表达式改变文字颜色 "\\d+" 获取所有数字
+    func changeTextChange(regex: String, textColor: UIColor? = UIColor(hex: "#3D3D3D"), textFont:UIFont) -> NSMutableAttributedString
+    {
+        let attributeString = NSMutableAttributedString(string: self)
+     
+        do {
+            let regexExpression = try NSRegularExpression(pattern: regex, options: NSRegularExpression.Options())
+            let result = regexExpression.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, self.count))
+            for item in result {
+                attributeString.addAttributes([NSAttributedString.Key.foregroundColor: textColor!, NSAttributedString.Key.font: textFont], range: item.range)
+            }
+        } catch {
+            print("Failed with error: \(error)")
+        }
+     
+        return attributeString
+    }
+    
 }

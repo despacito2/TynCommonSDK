@@ -141,4 +141,38 @@ public extension UIAlertController {
         actionSheet.addAction(action4)
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
+    
+    ///运动类型
+    static func sportsTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
+        let actionSheet = UIAlertController.init(title: "运动类别", message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: "健身", style: .default) { _ in
+            selectBlock("健身")
+        }
+        let action2 = UIAlertAction.init(title: "跑步", style: .default) { _ in
+            selectBlock("跑步")
+        }
+        let action3 = UIAlertAction.init(title: "骑行", style: .default) { _ in
+            selectBlock("骑行")
+        }
+        let action4 = UIAlertAction.init(title: "游泳", style: .default) { _ in
+            selectBlock("游泳")
+        }
+        let action5 = UIAlertAction.init(title: "瑜伽", style: .default) { _ in
+            selectBlock("瑜伽")
+        }
+        let action6 = UIAlertAction.init(title: "球类运动", style: .default) { _ in
+            selectBlock("球类运动")
+        }
+        let action7 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+
+        }
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(action3)
+        actionSheet.addAction(action4)
+        actionSheet.addAction(action5)
+        actionSheet.addAction(action6)
+        actionSheet.addAction(action7)
+        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
+    }
 }

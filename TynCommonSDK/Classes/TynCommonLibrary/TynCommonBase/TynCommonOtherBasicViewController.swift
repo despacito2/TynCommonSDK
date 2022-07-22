@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TYN_OtherBasicViewController: UIViewController,TYN_DefaultStyleViewController {
+ open class TYN_OtherBasicViewController: UIViewController,TYN_DefaultStyleViewController {
     var bgImageView:UIImageView!
-    override func viewDidLoad() {
+     open override func viewDidLoad() {
         super.viewDidLoad()
         setDefauTYN_tyle()
 //        topImageView(toView: view)

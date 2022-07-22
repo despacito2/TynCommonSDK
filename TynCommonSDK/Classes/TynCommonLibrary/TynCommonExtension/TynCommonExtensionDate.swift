@@ -73,6 +73,12 @@ public extension Date {
         return goodText
     }
     
+    func dimHh(startDate:Date, endDate:Date) -> Int {
+        let gregorian = NSCalendar(calendarIdentifier: .gregorian)
+        let result = gregorian!.components(NSCalendar.Unit.hour, from: startDate, to: endDate, options: NSCalendar.Options(rawValue: 0))
+        return result.hour ?? 0
+    }
+    
 }
 
 public extension Date {
@@ -100,4 +106,6 @@ public extension Date {
         components.second = -1
         return calendar.date(byAdding: components, to: self.startOfWeek)!
     }
+    
 }
+
