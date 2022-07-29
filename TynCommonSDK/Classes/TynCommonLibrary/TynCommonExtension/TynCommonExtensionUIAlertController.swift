@@ -10,19 +10,30 @@ import UIKit
 
 public extension UIAlertController {
     ///举报内容
-    static func reportAlert() {
+    static func reportAlert(selectBlock: @escaping () -> Void) {
         let actionSheet = UIAlertController.init(title: "举报类型", message: nil, preferredStyle: .actionSheet)
         let action1 = UIAlertAction.init(title: "涉黄/违法", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！")
+            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
+                selectBlock()
+            }
         }
         let action2 = UIAlertAction.init(title: "不实信息", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！")
+            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！"){
+                selectBlock()
+            }
+            
         }
         let action3 = UIAlertAction.init(title: "有害信息", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！")
+            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
+                selectBlock()
+            }
+            
         }
         let action4 = UIAlertAction.init(title: "不良价值导向", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！")
+            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
+                selectBlock()
+            }
+            
         }
         let action5 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
 
@@ -173,6 +184,26 @@ public extension UIAlertController {
         actionSheet.addAction(action5)
         actionSheet.addAction(action6)
         actionSheet.addAction(action7)
+        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
+    }
+    
+    //举报拉黑
+    static func reportAndBlacklistAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
+        let actionSheet = UIAlertController.init(title: "过滤垃圾内容", message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: "举报", style: .default) { _ in
+            selectBlock("举报")
+        }
+        let action2 = UIAlertAction.init(title: "拉黑", style: .default) { _ in
+            selectBlock("拉黑")
+        }
+        let action3 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+
+        }
+        
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(action3)
+
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
 }

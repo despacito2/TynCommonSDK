@@ -79,6 +79,50 @@ public extension Date {
         return result.hour ?? 0
     }
     
+    //未来几天星期几，几号
+    func future(days:Int? = 7) -> ([DateComponents], [String]) {
+        ///以后多少天星期几，几号
+        var timeArr = [DateComponents]()
+        var i = 0
+        let calendar = Calendar.current
+        while i <= days! {
+            let comp = calendar.dateComponents([.day, .weekday, .month], from: NSDate.now.dateToSomeDayDate(intervalDays: i) as Date)
+            timeArr.append(comp)
+            i += 1
+        }
+        
+        var dataArr = [String]()
+        for time in timeArr {
+            let weekday = time.weekday
+            
+            var whatDay = ""
+
+            switch weekday {
+            case 1:
+                whatDay = "周日"
+            case 2:
+                whatDay = "周一"
+            case 3:
+                whatDay = "周二"
+            case 4:
+                whatDay = "周三"
+            case 5:
+                whatDay = "周四"
+            case 6:
+                whatDay = "周五"
+            case 7:
+                whatDay = "周六"
+            default:
+                break
+            }
+            
+            dataArr.append(whatDay)
+            
+        }
+        
+        return (timeArr, dataArr)
+    }
+    
 }
 
 public extension Date {
