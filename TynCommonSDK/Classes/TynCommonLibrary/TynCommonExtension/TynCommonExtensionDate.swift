@@ -92,8 +92,13 @@ public extension Date {
         var timeArr = [DateComponents]()
         var i = 0
         let calendar = Calendar.current
+        let oneDay = 24 * 60 * 60
         while i <= days! {
-            let comp = calendar.dateComponents([.day, .weekday, .month], from: NSDate.now.dateToSomeDayDate(intervalDays: i) as Date)
+
+            let appointDate = NSDate.init(timeInterval: TimeInterval(oneDay * i), since: NSDate.now)
+            
+            let comp = calendar.dateComponents([.day, .weekday, .month], from: appointDate as Date)
+            
             timeArr.append(comp)
             i += 1
         }
