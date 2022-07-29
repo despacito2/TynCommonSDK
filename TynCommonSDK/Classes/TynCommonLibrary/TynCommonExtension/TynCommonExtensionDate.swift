@@ -48,6 +48,13 @@ public extension Date {
         return date
     }
     
+    ///当前时间加上多少天
+    func dateToSomeDayDate(intervalDays:Int) -> NSDate {
+        let oneDay = 24 * 60 * 60
+        let appointDate = NSDate.init(timeInterval: TimeInterval(oneDay * intervalDays), since: self)
+        return appointDate
+    }
+    
     ///当前时间转为年月日的格式String
     func dateToYMR() -> String {
         let formatter = DateFormatter()
@@ -150,6 +157,6 @@ public extension Date {
         components.second = -1
         return calendar.date(byAdding: components, to: self.startOfWeek)!
     }
-    
+
 }
 
