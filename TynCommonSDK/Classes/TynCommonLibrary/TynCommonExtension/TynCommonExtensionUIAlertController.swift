@@ -206,4 +206,28 @@ public extension UIAlertController {
 
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
+    
+    //训练类型
+    static func trainTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
+        let actionSheet = UIAlertController.init(title: "训练类型", message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: "力量训练", style: .default) { _ in
+            selectBlock("力量训练")
+        }
+        let action2 = UIAlertAction.init(title: "弹跳力训练", style: .default) { _ in
+            selectBlock("弹跳力训练")
+        }
+        let action3 = UIAlertAction.init(title: "移动速度训练", style: .default) { _ in
+            selectBlock("移动速度训练")
+        }
+        let action4 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+
+        }
+        
+        actionSheet.addAction(action1)
+        actionSheet.addAction(action2)
+        actionSheet.addAction(action3)
+        actionSheet.addAction(action4)
+
+        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
+    }
 }

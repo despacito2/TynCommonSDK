@@ -43,11 +43,11 @@ public extension TYN_HUD {
     }
     
     ///成功图片加文字
-    static func showSuccess(title: String, sucImageName:String, afterDelay:Double? = 2.0, completion: (() -> Void)? = nil) {
+    static func showSuccess(title: String, sucImageName:String? = "成功", afterDelay:Double? = 2.0, completion: (() -> Void)? = nil) {
         let toView = UIViewController.getCurrentViewController()?.view
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
         hud.mode = .customView //模式设置为自定义视图
-        let customImageView = HudImageView(image: UIImage(named: sucImageName)!)
+        let customImageView = HudImageView(image: UIImage(named: sucImageName!)!)
         hud.customView =  customImageView//自定义视图显示图片
         hud.customView?.invalidateIntrinsicContentSize()
         hud.label.text = title

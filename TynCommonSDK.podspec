@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'TynCommonSDK' #项目名称
-s.version      = "1.2.0" #版本号 要和接下来上传git的tag版本号一致
+s.version      = "1.2.1" #版本号 要和接下来上传git的tag版本号一致
 s.summary      = "田宴宁的库" #这里对你写的库进行简要的概述一下
 s.description  = <<-DESC
 这就是一个测试，没别的，你信不信？（这里对你写的库进行具体的使用方法说明及其他描述，稍微写一下就行后期再整改）
