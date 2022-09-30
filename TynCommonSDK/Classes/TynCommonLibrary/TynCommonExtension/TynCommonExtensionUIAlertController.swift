@@ -9,59 +9,80 @@ import Foundation
 import UIKit
 
 public extension UIAlertController {
-    ///举报内容
-    static func reportAlert(selectBlock: @escaping () -> Void) {
-        let actionSheet = UIAlertController.init(title: "举报类型", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "涉黄/违法", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
-                selectBlock()
-            }
+    
+    ///举报拉黑
+    static func reportAndBlacklistAlert(isChinese:Bool? = true, selectBlock: @escaping (_ typeText:String) -> Void) {
+        
+        var title:String
+        var reportAndBlacklistArr = [String]()
+        
+        if isChinese == true {
+            title = "过滤垃圾内容"
+            reportAndBlacklistArr = ["举报", "拉黑", "取消"]
+        }else {
+            title = "Filtering Spam content"
+            reportAndBlacklistArr = ["report", "blacklist", "cancel"]
         }
-        let action2 = UIAlertAction.init(title: "不实信息", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！"){
-                selectBlock()
-            }
-            
+        
+        let actionSheet = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: reportAndBlacklistArr[0], style: .default) { _ in
+            selectBlock(reportAndBlacklistArr[0])
         }
-        let action3 = UIAlertAction.init(title: "有害信息", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
-                selectBlock()
-            }
-            
+        let action2 = UIAlertAction.init(title: reportAndBlacklistArr[1], style: .default) { _ in
+            selectBlock(reportAndBlacklistArr[1])
         }
-        let action4 = UIAlertAction.init(title: "不良价值导向", style: .default) { _ in
-            TYN_HUD.showMsg(textMsg: "举报成功，正在处理！") {
-                selectBlock()
-            }
-            
-        }
-        let action5 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+        let action3 = UIAlertAction.init(title: reportAndBlacklistArr[2], style: .cancel) { _ in
 
         }
+        
         actionSheet.addAction(action1)
         actionSheet.addAction(action2)
         actionSheet.addAction(action3)
-        actionSheet.addAction(action4)
-        actionSheet.addAction(action5)
+
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
     
     ///举报内容
-    static func joinTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "活动类别", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "羽毛球", style: .default) { _ in
-            selectBlock("羽毛球")
+    static func reportAlert(isChinese:Bool? = true, selectBlock: @escaping () -> Void) {
+        var reportTextArr = [String]()
+        var title:String
+        var resultText:String
+        
+        if isChinese == true {
+            reportTextArr = ["涉黄/违法", "不实信息", "有害信息", "不良价值导向", "取消"]
+            title = "举报类型"
+            resultText = "举报成功，正在处理！"
+        }else {
+            reportTextArr = ["Related to pornography/illegal", "False information", "harmful information", "Bad value orientation", "cancel"]
+            title = "Report type"
+            resultText = "Report successful, handling!"
         }
-        let action2 = UIAlertAction.init(title: "篮球", style: .default) { _ in
-            selectBlock("篮球")
+        
+        let actionSheet = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: reportTextArr[0], style: .default) { _ in
+            TYN_HUD.showMsg(textMsg: resultText) {
+                selectBlock()
+            }
         }
-        let action3 = UIAlertAction.init(title: "乒乓球", style: .default) { _ in
-            selectBlock("乒乓球")
+        let action2 = UIAlertAction.init(title: reportTextArr[1], style: .default) { _ in
+            TYN_HUD.showMsg(textMsg: resultText) {
+                selectBlock()
+            }
+            
         }
-        let action4 = UIAlertAction.init(title: "足球", style: .default) { _ in
-            selectBlock("足球")
+        let action3 = UIAlertAction.init(title: reportTextArr[2], style: .default) { _ in
+            TYN_HUD.showMsg(textMsg: resultText) {
+                selectBlock()
+            }
+            
         }
-        let action5 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+        let action4 = UIAlertAction.init(title: reportTextArr[3], style: .default) { _ in
+            TYN_HUD.showMsg(textMsg: resultText) {
+                selectBlock()
+            }
+            
+        }
+        let action5 = UIAlertAction.init(title: reportTextArr[4], style: .cancel) { _ in
 
         }
         actionSheet.addAction(action1)
@@ -73,12 +94,24 @@ public extension UIAlertController {
     }
     
     ///确认取消弹窗
-    static func affirmOrCancelAlert(title:String, selectBlock: @escaping () -> Void) {
+    static func affirmOrCancelAlert(isChinese:Bool? = true, title:String, selectBlock: @escaping () -> Void) {
+        
+        var okText:String
+        var cancelText:String
+        
+        if isChinese == true {
+            okText = "确定"
+            cancelText = "取消"
+        }else {
+            okText = "ok"
+            cancelText = "cancel"
+        }
+        
         let actionAlert = UIAlertController.init(title: title, message: nil, preferredStyle: .alert)
-        let actionAffirm = UIAlertAction.init(title: "确定", style: .default) { _ in
+        let actionAffirm = UIAlertAction.init(title: okText, style: .default) { _ in
             selectBlock()
         }
-        let actionCancel = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+        let actionCancel = UIAlertAction.init(title: cancelText, style: .cancel) { _ in
 
         }
         actionAlert.addAction(actionAffirm)
@@ -87,18 +120,30 @@ public extension UIAlertController {
     }
     
     //男女性别
-    static func genderAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "性别", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "男", style: .default) { _ in
-            selectBlock("男")
+    static func genderAlert(isChinese:Bool? = true, selectBlock: @escaping (_ typeText:String) -> Void) {
+        
+        var title:String
+        var genderTextArr = [String]()
+        
+        if isChinese == true {
+            title = "性别"
+            genderTextArr = ["男", "女", "保密", "取消"]
+        }else {
+            title = "Gender"
+            genderTextArr = ["male", "female", "secrecy", "cancel"]
         }
-        let action2 = UIAlertAction.init(title: "女", style: .default) { _ in
-            selectBlock("女")
+        
+        let actionSheet = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction.init(title: genderTextArr[0], style: .default) { _ in
+            selectBlock(genderTextArr[0])
         }
-        let action4 = UIAlertAction.init(title: "保密", style: .default) { _ in
-            selectBlock("保密")
+        let action2 = UIAlertAction.init(title: genderTextArr[1], style: .default) { _ in
+            selectBlock(genderTextArr[1])
         }
-        let action3 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+        let action4 = UIAlertAction.init(title: genderTextArr[2], style: .default) { _ in
+            selectBlock(genderTextArr[2])
+        }
+        let action3 = UIAlertAction.init(title: genderTextArr[3], style: .cancel) { _ in
 
         }
         
@@ -110,124 +155,33 @@ public extension UIAlertController {
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
     
-    //比赛模式
-    static func matchTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "请选择比赛模式", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "单打", style: .default) { _ in
-            selectBlock("单打")
-        }
-        let action2 = UIAlertAction.init(title: "双打", style: .default) { _ in
-            selectBlock("双打")
-        }
-        let action3 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
+    ///弹窗模版，输入文字数组即可
+    static func customPopup(isChinese:Bool? = true, title:String, textArr: [String], selectBlock: @escaping (_ typeText:String) -> Void) {
 
+        var tempTextArr = textArr
+        if isChinese == true {
+            tempTextArr.append("取消")
+        }else {
+            tempTextArr.append("Cancel")
         }
         
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(action3)
-
-        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
-    }
-    
-    //比赛几回合
-    static func matchNumTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "请选择比赛赛制", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "三盘两胜", style: .default) { _ in
-            selectBlock("三盘两胜")
-        }
-        let action2 = UIAlertAction.init(title: "五盘三胜", style: .default) { _ in
-            selectBlock("五盘三胜")
-        }
-        let action3 = UIAlertAction.init(title: "无限局", style: .default) { _ in
-            selectBlock("无限局")
-        }
-        let action4 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
-
+        let actionSheet = UIAlertController.init(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        for (singleIndex, single) in tempTextArr.enumerated() {
+            
+            if singleIndex != tempTextArr.count - 1 {
+                let action = UIAlertAction.init(title: single, style: .default) { _ in
+                    selectBlock(single)
+                }
+                actionSheet.addAction(action)
+            }else {
+                let action = UIAlertAction.init(title: tempTextArr.last, style: .cancel) { _ in
+                    
+                }
+                actionSheet.addAction(action)
+            }
         }
         
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(action3)
-        actionSheet.addAction(action4)
-        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
-    }
-    
-    ///运动类型
-    static func sportsTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "运动类别", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "健身", style: .default) { _ in
-            selectBlock("健身")
-        }
-        let action2 = UIAlertAction.init(title: "跑步", style: .default) { _ in
-            selectBlock("跑步")
-        }
-        let action3 = UIAlertAction.init(title: "骑行", style: .default) { _ in
-            selectBlock("骑行")
-        }
-        let action4 = UIAlertAction.init(title: "游泳", style: .default) { _ in
-            selectBlock("游泳")
-        }
-        let action5 = UIAlertAction.init(title: "瑜伽", style: .default) { _ in
-            selectBlock("瑜伽")
-        }
-        let action6 = UIAlertAction.init(title: "球类运动", style: .default) { _ in
-            selectBlock("球类运动")
-        }
-        let action7 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
-
-        }
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(action3)
-        actionSheet.addAction(action4)
-        actionSheet.addAction(action5)
-        actionSheet.addAction(action6)
-        actionSheet.addAction(action7)
-        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
-    }
-    
-    //举报拉黑
-    static func reportAndBlacklistAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "过滤垃圾内容", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "举报", style: .default) { _ in
-            selectBlock("举报")
-        }
-        let action2 = UIAlertAction.init(title: "拉黑", style: .default) { _ in
-            selectBlock("拉黑")
-        }
-        let action3 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
-
-        }
-        
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(action3)
-
-        TYN_GetRootController.rootVC().present(actionSheet, animated: true)
-    }
-    
-    //训练类型
-    static func trainTypeAlert(selectBlock: @escaping (_ typeText:String) -> Void) {
-        let actionSheet = UIAlertController.init(title: "训练类型", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction.init(title: "力量训练", style: .default) { _ in
-            selectBlock("力量训练")
-        }
-        let action2 = UIAlertAction.init(title: "弹跳力训练", style: .default) { _ in
-            selectBlock("弹跳力训练")
-        }
-        let action3 = UIAlertAction.init(title: "移动速度训练", style: .default) { _ in
-            selectBlock("移动速度训练")
-        }
-        let action4 = UIAlertAction.init(title: "取消", style: .cancel) { _ in
-
-        }
-        
-        actionSheet.addAction(action1)
-        actionSheet.addAction(action2)
-        actionSheet.addAction(action3)
-        actionSheet.addAction(action4)
-
         TYN_GetRootController.rootVC().present(actionSheet, animated: true)
     }
 }

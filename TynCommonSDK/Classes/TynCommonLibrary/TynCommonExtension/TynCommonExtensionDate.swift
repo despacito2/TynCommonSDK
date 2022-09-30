@@ -8,8 +8,8 @@
 import Foundation
 
 public extension Date {
-//    yyyy-MM-dd_HH:mm:ss
-    
+//    yyyy-MM-dd_HH:mm:ss 中文
+//    MMM dd, yyyy 英文
     //日期转英文
     func dateToEnString(dateFormat:String? = "MMM dd") -> String {
         let formatter = DateFormatter()
@@ -133,6 +133,34 @@ public extension Date {
         }
         
         return (timeArr, dataArr)
+    }
+    
+    //从现在开始，到未来某个时间的倒计时 (今天 -> 固定日期)
+    func daysToNow(toDateString:String) -> Int {
+        // 计算两个日期差，返回相差天数
+        let formatter = DateFormatter()
+        let calendar = Calendar.current
+        formatter.dateFormat = "MMM dd, yyyy"
+        
+        // 固定日期
+        let endDate = formatter.date(from: toDateString)
+        
+        let diff:DateComponents = calendar.dateComponents([.day], from: self, to: endDate!)
+        return diff.day!
+    }
+    
+    //从之前的某个时间开始，到现在过了多少天 (固定日期 -> 今天)
+    func agoToNow(agoDateString:String) -> Int {
+        // 计算两个日期差，返回相差天数
+        let formatter = DateFormatter()
+        let calendar = Calendar.current
+        formatter.dateFormat = "MMM dd, yyyy"
+        
+        // 固定日期
+        let startDate = formatter.date(from: agoDateString)
+        
+        let diff:DateComponents = calendar.dateComponents([.day], from: startDate!, to: self)
+        return diff.day!
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  TYN_TimekeepingBtn.swift
+//  TYNTimekeepingBtn.swift
 //  LeafLife
 //
 //  Created by tyn on 2022/7/19.
@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-public protocol TYN_TimekeepingBtnDelegate {
+public protocol TYNTimekeepingBtnDelegate {
     func endTotalTime(time:Int)
 }
 
-open class TYN_TimekeepingBtn: UIButton {
+open class TYNTimekeepingBtn: UIButton {
         
     public var codeTimer: DispatchSourceTimer!
     public var timeTotal = 0
     public var startTimeTotal = 0
-    public var delegate:TYN_TimekeepingBtnDelegate!
+    public var delegate:TYNTimekeepingBtnDelegate!
     
     //计时器激活和注销的方法
     ///true true 恢复 | true false 开始 | false true 暂停 | false false 结束

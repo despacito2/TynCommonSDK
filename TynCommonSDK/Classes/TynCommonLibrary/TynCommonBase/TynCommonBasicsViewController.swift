@@ -31,7 +31,17 @@ open class TYN_BasicsViewController: UIViewController, TYN_DefaultStyleViewContr
         super.viewDidLoad()
         
         setDefauTYN_tyle()
-//        topImageView(toView: view)
+
+        //顶部导航栏阴影
+//        let shadowView = UIView.init(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 1))
+//        shadowView.backgroundColor = UIColor(hex: "#FFFFFF")
+//        shadowView.layer.shadowOffset = CGSize(width: 0, height: 4)
+//        shadowView.layer.shadowRadius = 6
+//        shadowView.layer.shadowOpacity = 1
+//        shadowView.layer.shadowColor = UIColor(hex: "#000000", alpha: 0.5).cgColor
+//        view.addSubview(shadowView)
+        
+        navigationController?.navigationBar.tintColor = .black
         
         //隐藏导航栏之后，开启右滑手势
         if(self.navigationController != nil){

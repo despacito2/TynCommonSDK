@@ -35,10 +35,10 @@ public extension TYN_BRPickerView {
     }
     
     ///上午下午小时
-    static func hours(selecteCallBack:@escaping BRDateResultBlock) {
+    static func hours(title:String, selecteCallBack:@escaping BRDateResultBlock) {
         let datePickerView = BRDatePickerView()
         datePickerView.pickerMode = .HM
-        datePickerView.title = "请选择预约时间"
+        datePickerView.title = title
         
         datePickerView.selectDate = NSDate.now
         datePickerView.resultBlock = selecteCallBack
