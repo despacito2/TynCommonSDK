@@ -94,7 +94,7 @@ public extension UIAlertController {
     }
     
     ///确认取消弹窗
-    static func affirmOrCancelAlert(isChinese:Bool? = true, title:String, selectBlock: @escaping () -> Void) {
+    static func affirmOrCancelAlert(isChinese:Bool? = true, title:String, isCancel:Bool? = true, selectBlock: @escaping () -> Void) {
         
         var okText:String
         var cancelText:String
@@ -115,7 +115,11 @@ public extension UIAlertController {
 
         }
         actionAlert.addAction(actionAffirm)
-        actionAlert.addAction(actionCancel)
+        
+        if isCancel == true {
+            actionAlert.addAction(actionCancel)
+        }
+        
         TYN_GetRootController.rootVC().present(actionAlert, animated: true)
     }
     
@@ -156,7 +160,7 @@ public extension UIAlertController {
     }
     
     ///弹窗模版，输入文字数组即可
-    static func customPopup(isChinese:Bool? = true, title:String, textArr: [String], selectBlock: @escaping (_ typeText:String) -> Void) {
+    static func customPopup(isChinese:Bool? = true, title:String, textArr: [String], selectBlock: @escaping (_ typeText:String, _ typeIndex:Int) -> Void) {
 
         var tempTextArr = textArr
         if isChinese == true {
@@ -171,7 +175,7 @@ public extension UIAlertController {
             
             if singleIndex != tempTextArr.count - 1 {
                 let action = UIAlertAction.init(title: single, style: .default) { _ in
-                    selectBlock(single)
+                    selectBlock(single, singleIndex)
                 }
                 actionSheet.addAction(action)
             }else {

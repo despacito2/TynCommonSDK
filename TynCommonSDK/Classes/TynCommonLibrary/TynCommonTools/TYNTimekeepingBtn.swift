@@ -10,6 +10,7 @@ import UIKit
 
 public protocol TYNTimekeepingBtnDelegate {
     func endTotalTime(time:Int)
+    func time(time:Int)
 }
 
 open class TYNTimekeepingBtn: UIButton {
@@ -18,6 +19,8 @@ open class TYNTimekeepingBtn: UIButton {
     public var timeTotal = 0
     public var startTimeTotal = 0
     public var delegate:TYNTimekeepingBtnDelegate!
+    public var isCountDown:Bool!
+
     
     //计时器激活和注销的方法
     ///true true 恢复 | true false 开始 | false true 暂停 | false false 结束
@@ -35,11 +38,20 @@ open class TYNTimekeepingBtn: UIButton {
             codeTimer.schedule(deadline: .now(), repeating: .milliseconds(1000))
             //添加计时器的事件
             codeTimer.setEventHandler { [self] in
-                timeTotal = timeTotal + 1
+                
+                if isCountDown == true {
+                    timeTotal = timeTotal - 1
+                }else {
+                    timeTotal = timeTotal + 1
+                }
+                
                 
                 DispatchQueue.main.async {
                     print("\(self.timeTotal),\(self.timeTotal.multipleZeroH())")
-                    self.setTitle((self.startTimeTotal + self.timeTotal).multipleZeroH(), for: .normal)
+//                    self.setTitle((self.startTimeTotal + self.timeTotal).multipleZeroH(), for: .normal)
+                    self.setTitle(self.timeTotal.multipleZeroH(), for: .normal)
+                    
+                    self.delegate.time(time: self.timeTotal)
                 }
             }
 

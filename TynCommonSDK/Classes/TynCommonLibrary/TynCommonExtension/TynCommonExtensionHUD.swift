@@ -8,11 +8,22 @@
 import MBProgressHUD
 import UIKit
 
+//修改背景颜色，和文字颜色
+//hud.bezelView.style = .solidColor
+//hud.bezelView.backgroundColor = .black
+//hud.label.textColor = UIColor(hex: "#FFFFFF")
+
+//菊花图转圈颜色
+//hud.contentColor = .white
+
 public enum TYN_HUD {
     
 }
 
 public extension TYN_HUD {
+    //isChinese:Bool? = true
+    //isChinese:Bool? = false
+    
     ///将信息填写完整 Complete the information
     static func showMsgComplete(isChinese:Bool? = true, toView:UIView? = UIViewController.getCurrentViewController()?.view, completion:(() -> Void)? = nil) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
@@ -107,6 +118,49 @@ public extension TYN_HUD {
         //HUD窗口显示1秒后自动隐藏
         hud.completionBlock = completion
         hud.hide(animated: true, afterDelay: afterDelay!)
+    }
+    
+    //修改成功
+    static func showModifySuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+        var title:String
+        if isChinese == true {
+            title = "修改成功"
+        }else {
+            title = "Modify successfully"
+        }
+        showSuccess(title: title, completion: completion)
+    }
+    
+    //添加成功
+    static func showAddSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+        var title:String
+        if isChinese == true {
+            title = "添加成功"
+        }else {
+            title = "Successfully added"
+        }
+        showSuccess(title: title, completion: completion)
+    }
+    
+    //删除成功
+    static func showDeleteSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+        var title:String
+        if isChinese == true {
+            title = "删除成功"
+        }else {
+            title = "Successfully delete"
+        }
+        showSuccess(title: title, completion: completion)
+    }
+    
+    static func showUploadSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+        var title:String
+        if isChinese == true {
+            title = "上传成功"
+        }else {
+            title = "Successfully upload"
+        }
+        showSuccess(title: title, completion: completion)
     }
     
     ///隐藏hud

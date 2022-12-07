@@ -12,7 +12,7 @@ public class TYN_TextView: UITextView {
     
     /// 占位标签
     fileprivate lazy var placeholderLabel = UILabel()
-    var placeholderText:String? = "请输入内容" {
+    public var placeholderText:String? = "请输入内容" {
         didSet {
             setupUI()
         }
