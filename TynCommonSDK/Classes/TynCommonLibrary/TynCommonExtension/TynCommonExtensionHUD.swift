@@ -21,11 +21,11 @@ public enum TYN_HUD {
 }
 
 public extension TYN_HUD {
-    //isChinese:Bool? = true
+    //isChinese:Bool? = false
     //isChinese:Bool? = false
     
     ///将信息填写完整 Complete the information
-    static func showMsgComplete(isChinese:Bool? = true, toView:UIView? = UIViewController.getCurrentViewController()?.view, completion:(() -> Void)? = nil) {
+    static func showMsgComplete(isChinese:Bool? = false, toView:UIView? = UIViewController.getCurrentViewController()?.view, completion:(() -> Void)? = nil) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
         hud.mode = .text
         
@@ -40,7 +40,7 @@ public extension TYN_HUD {
     }
     
     ///已经是最新版本 It is the latest version
-    static func showMsgLast(isChinese:Bool? = true, toView:UIView? = UIViewController.getCurrentViewController()?.view, completion:(() -> Void)? = nil) {
+    static func showMsgLast(isChinese:Bool? = false, toView:UIView? = UIViewController.getCurrentViewController()?.view, completion:(() -> Void)? = nil) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
         hud.mode = .text
         
@@ -55,7 +55,7 @@ public extension TYN_HUD {
     }
     
     ///清除缓存
-    static func showWaitClearText(isChinese:Bool? = true, toView:UIView? = UIViewController.getCurrentViewController()?.view) {
+    static func showWaitClearText(isChinese:Bool? = false, toView:UIView? = UIViewController.getCurrentViewController()?.view) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
         
         if isChinese == true {
@@ -90,10 +90,14 @@ public extension TYN_HUD {
     }
     
     ///菊花图加提示文字,自动消失
-    static func showWaitText(toView:UIView? = UIViewController.getCurrentViewController()?.view, text:String!, completion: (() -> Void)? = nil) {
+    static func showWaitText(isAutoOff:Bool? = true, toView:UIView? = UIViewController.getCurrentViewController()?.view, text:String!, completion: (() -> Void)? = nil) {
         let hud = MBProgressHUD.showAdded(to: toView!, animated: true)
         hud.label.text = text
-        hud.hide(animated: true, afterDelay: 2)
+        
+        if isAutoOff == true {
+            hud.hide(animated: true, afterDelay: 2)
+        }
+        
         hud.completionBlock = completion
     }
     
@@ -121,7 +125,7 @@ public extension TYN_HUD {
     }
     
     //修改成功
-    static func showModifySuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+    static func showModifySuccess(isChinese:Bool? = false, completion: (() -> Void)? = nil) {
         var title:String
         if isChinese == true {
             title = "修改成功"
@@ -132,7 +136,7 @@ public extension TYN_HUD {
     }
     
     //添加成功
-    static func showAddSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+    static func showAddSuccess(isChinese:Bool? = false, completion: (() -> Void)? = nil) {
         var title:String
         if isChinese == true {
             title = "添加成功"
@@ -143,7 +147,7 @@ public extension TYN_HUD {
     }
     
     //删除成功
-    static func showDeleteSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+    static func showDeleteSuccess(isChinese:Bool? = false, completion: (() -> Void)? = nil) {
         var title:String
         if isChinese == true {
             title = "删除成功"
@@ -153,7 +157,7 @@ public extension TYN_HUD {
         showSuccess(title: title, completion: completion)
     }
     
-    static func showUploadSuccess(isChinese:Bool? = true, completion: (() -> Void)? = nil) {
+    static func showUploadSuccess(isChinese:Bool? = false, completion: (() -> Void)? = nil) {
         var title:String
         if isChinese == true {
             title = "上传成功"

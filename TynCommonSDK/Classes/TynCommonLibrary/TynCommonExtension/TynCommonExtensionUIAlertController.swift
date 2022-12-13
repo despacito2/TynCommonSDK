@@ -11,7 +11,7 @@ import UIKit
 public extension UIAlertController {
     
     ///举报拉黑
-    static func reportAndBlacklistAlert(isChinese:Bool? = true, selectBlock: @escaping (_ typeText:String) -> Void) {
+    static func reportAndBlacklistAlert(isChinese:Bool? = false, selectBlock: @escaping (_ typeText:String) -> Void) {
         
         var title:String
         var reportAndBlacklistArr = [String]()
@@ -43,7 +43,7 @@ public extension UIAlertController {
     }
     
     ///举报内容
-    static func reportAlert(isChinese:Bool? = true, selectBlock: @escaping () -> Void) {
+    static func reportAlert(isChinese:Bool? = false, selectBlock: @escaping () -> Void) {
         var reportTextArr = [String]()
         var title:String
         var resultText:String
@@ -94,7 +94,7 @@ public extension UIAlertController {
     }
     
     ///确认取消弹窗
-    static func affirmOrCancelAlert(isChinese:Bool? = true, title:String, isCancel:Bool? = true, selectBlock: @escaping () -> Void) {
+    static func affirmOrCancelAlert(isChinese:Bool? = false, title:String, isCancel:Bool? = true, selectBlock: @escaping () -> Void, cancelBlock: @escaping () -> Void) {
         
         var okText:String
         var cancelText:String
@@ -112,7 +112,7 @@ public extension UIAlertController {
             selectBlock()
         }
         let actionCancel = UIAlertAction.init(title: cancelText, style: .cancel) { _ in
-
+            cancelBlock()
         }
         actionAlert.addAction(actionAffirm)
         
@@ -124,7 +124,7 @@ public extension UIAlertController {
     }
     
     //男女性别
-    static func genderAlert(isChinese:Bool? = true, selectBlock: @escaping (_ typeText:String) -> Void) {
+    static func genderAlert(isChinese:Bool? = false, selectBlock: @escaping (_ typeText:String) -> Void) {
         
         var title:String
         var genderTextArr = [String]()
@@ -160,7 +160,7 @@ public extension UIAlertController {
     }
     
     ///弹窗模版，输入文字数组即可
-    static func customPopup(isChinese:Bool? = true, title:String, textArr: [String], selectBlock: @escaping (_ typeText:String, _ typeIndex:Int) -> Void) {
+    static func customPopup(isChinese:Bool? = false, title:String, textArr: [String], selectBlock: @escaping (_ typeText:String, _ typeIndex:Int) -> Void) {
 
         var tempTextArr = textArr
         if isChinese == true {

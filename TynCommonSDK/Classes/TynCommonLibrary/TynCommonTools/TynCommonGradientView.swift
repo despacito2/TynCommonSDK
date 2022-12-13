@@ -14,7 +14,7 @@ enum GradientType: Int {
     case rightToLeft = 3 /// 从右到左
 }
 
-class GradientView: UIView {
+public class GradientView: UIView {
 
     /// 0 从上到下 1 从左到右 2 从下到上 3 从右到左
     @IBInspectable var gradientType: Int = 1
@@ -75,6 +75,7 @@ class GradientView: UIView {
             bgGradient.startPoint = CGPoint(x: 1.0, y: 0.5)
             bgGradient.endPoint = CGPoint(x: 0, y: 0.5)
         }
+        
     }
 
 

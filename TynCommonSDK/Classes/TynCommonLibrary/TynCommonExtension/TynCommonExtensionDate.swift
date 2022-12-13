@@ -87,7 +87,7 @@ public extension Date {
     }
     
     //未来几天星期几，几号
-    func future(days:Int? = 7) -> ([DateComponents], [String]) {
+    func future(isChinese:Bool? = false, days:Int? = 6) -> ([DateComponents], [String]) {
         ///以后多少天星期几，几号
         var timeArr = [DateComponents]()
         var i = 0
@@ -95,7 +95,7 @@ public extension Date {
         let oneDay = 24 * 60 * 60
         while i <= days! {
 
-            let appointDate = NSDate.init(timeInterval: TimeInterval(oneDay * i), since: NSDate.now)
+            let appointDate = NSDate.init(timeInterval: TimeInterval(oneDay * i), since: self)
             
             let comp = calendar.dateComponents([.day, .weekday, .month], from: appointDate as Date)
             
@@ -111,19 +111,53 @@ public extension Date {
 
             switch weekday {
             case 1:
-                whatDay = "周日"
+                if isChinese == false {
+                    whatDay = "Sun"
+                }else {
+                    whatDay = "周日"
+                }
             case 2:
-                whatDay = "周一"
+                if isChinese == false {
+                    whatDay = "Mon"
+                }else {
+                    whatDay = "周一"
+                }
+                
             case 3:
-                whatDay = "周二"
+                if isChinese == false {
+                    whatDay = "Tue"
+                }else {
+                    whatDay = "周二"
+                }
+                
             case 4:
-                whatDay = "周三"
+                if isChinese == false {
+                    whatDay = "Wed"
+                }else {
+                    whatDay = "周三"
+                }
+                
             case 5:
-                whatDay = "周四"
+                if isChinese == false {
+                    whatDay = "Thu"
+                }else {
+                    whatDay = "周四"
+                }
+                
             case 6:
-                whatDay = "周五"
+                if isChinese == false {
+                    whatDay = "Fri"
+                }else {
+                    whatDay = "周五"
+                }
+                
             case 7:
-                whatDay = "周六"
+                if isChinese == false {
+                    whatDay = "Sat"
+                }else {
+                    whatDay = "周六"
+                }
+                
             default:
                 break
             }

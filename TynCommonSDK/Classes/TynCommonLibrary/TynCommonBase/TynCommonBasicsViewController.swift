@@ -44,7 +44,7 @@ open class TYN_BasicsViewController: UIViewController, TYN_DefaultStyleViewContr
         //        view.addSubview(shadowView)
         
         //返回按钮颜色
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .white
         
         //整体背景图
 //        let bgImageView = UIImageView.init(frame: CGRect(x: 0, y: -navigationHandStatusH(), width: screenWidth, height: screenHeight + navigationHandStatusH()))
